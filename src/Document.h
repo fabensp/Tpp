@@ -5,20 +5,19 @@
 
 namespace Tpp {
     class Document { // connects fs with working data
-    public: // members
-        Buffer::BufferType type;
     private: // members
+        Buffer::BufferType type;
         BufferStructure* buf_st; // text buffer structure
         DocumentIO dio;
     public: // methods
-        bool load_file (const char* f); // read file f in to the editor. returns success
+        bool load_file (const std::string& f); // read file f in to the editor. returns success
         bool store_file (); // write contents of buf_st to last read file
-        bool store_file (const char* f); // write contents of buf_st to file f. returns success
-        bool file_exists (const char* f) { return dio.file_exists(f); } // checks if file f exists in the fs
-        const char** current_file_name () { return dio.file_name(); } // current file name
-        char** doc2str () { return buf_st->doc2str(); } // text contents of doc
-        char** line2str () { return buf_st->line2str(); } // text contents of current line
-        char** line2str (int l) { return buf_st->line2str(l); } // text contents of line l
+        bool store_file (const std::string& f); // write contents of buf_st to file f. returns success
+        bool file_exists (const std::string& f) { return dio.file_exists(f); } // checks if file f exists in the fs
+        const std::string& current_file_name () { return dio.file_name(); } // current file name
+        std::string& doc2str () { return buf_st->doc2str(); } // text contents of doc
+        std::string& line2str () { return buf_st->line2str(); } // text contents of current line
+        std::string& line2str (int l) { return buf_st->line2str(l); } // text contents of line l
         int line_length () { return buf_st->line_length(); } // length of current line
         int line_length (int l) { return buf_st->line_length(l); } // length of line l
         int line_count () { return buf_st->line_count(); } // # lines in doc
@@ -41,18 +40,14 @@ namespace Tpp {
         bool ins_la () { return buf_st->ins_la(); } // insert line above
         bool ins_lb () { return buf_st->ins_lb(); } // insert line below
         bool ins_text (char c) { return buf_st->ins_text(c); } // insert a character
-        bool ins_text (char** s) { return buf_st->ins_text(s); } // insert characters
+        bool ins_text (std::string& s) { return buf_st->ins_text(s); } // insert characters
         bool rm_line () { return buf_st->rm_line(); } // remove current line
         bool rm_left () { return buf_st->rm_left(); } // remove char to left
         
         Document ();
-        
         explicit Document (Buffer::BufferType t);
-        
         ~Document () {
             delete buf_st, this;
         }
-    
-    private: // methods
     };
 }
