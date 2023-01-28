@@ -44,8 +44,9 @@ namespace Tpp {
         bool rm_line () { return buf_st->rm_line(); } // remove current line
         bool rm_left () { return buf_st->rm_left(); } // remove char to left
         
-        Document ();
-        explicit Document (Buffer::BufferType t);
+        Document (); // default constructor
+        explicit Document (Buffer::BufferType t); // doctype constructor
+        Document (Buffer::BufferType t, const std::string& f); // doctype + file constructor
         ~Document () {
             delete buf_st, this;
         }

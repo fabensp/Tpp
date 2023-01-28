@@ -4,7 +4,7 @@ class Buffer {
 public:
     enum BufferType { // type of line buffer to use
         Gap = 'g',
-        Link = 'l',
+        LinkedList = 'l',
     };
 public:
     void load_string (const std::string& s) {
