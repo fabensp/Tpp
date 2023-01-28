@@ -33,7 +33,7 @@ namespace Tpp {
         s[i] = '\0';
         std::string_view ext(s + i + 1, len - i);
         ext = (ext == "txt" || ext == "csv" || ext == "cpp") ? ext : "txt";
-        return s + (s + i + 1);
+        //return s + (s + i + 1);
     }
     
     Editor::Editor () {
