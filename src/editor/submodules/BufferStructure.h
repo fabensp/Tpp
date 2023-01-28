@@ -1,7 +1,7 @@
 #pragma once
 
-#include "buffers/Buffer.h"
-#include "buffers/StructNode.h"
+#include "/buffers/Buffer.h"
+#include "StructNode.h"
 
 namespace Tpp {
     class BufferStructure { // holds lines together
@@ -39,7 +39,7 @@ namespace Tpp {
         bool ins_la (); // insert line above
         bool ins_lb (); // insert line below
         bool ins_text (char c); // insert a character
-        bool ins_text (std::string& s); // insert characters
+        bool ins_text (const std::string& s); // insert characters
         bool rm_line (); // remove current line
         bool rm_left (); // remove char to left
         

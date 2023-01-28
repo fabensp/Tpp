@@ -1,7 +1,7 @@
 #pragma once
 
-#include "BufferStructure.h"
-#include "DocumentIO.h"
+#include "submodules/BufferStructure.h"
+#include "submodules/DocumentIO.h"
 
 namespace Tpp {
     class Document { // connects fs with working data
@@ -40,7 +40,7 @@ namespace Tpp {
         bool ins_la () { return buf_st->ins_la(); } // insert line above
         bool ins_lb () { return buf_st->ins_lb(); } // insert line below
         bool ins_text (char c) { return buf_st->ins_text(c); } // insert a character
-        bool ins_text (std::string& s) { return buf_st->ins_text(s); } // insert characters
+        bool ins_text (const std::string& s) { return buf_st->ins_text(s); } // insert characters
         bool rm_line () { return buf_st->rm_line(); } // remove current line
         bool rm_left () { return buf_st->rm_left(); } // remove char to left
         

@@ -55,6 +55,12 @@ build CMakeFiles/Tpp.dir/src/main.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfa
   OBJECT_DIR = CMakeFiles\Tpp.dir
   OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src
 
+build CMakeFiles/Tpp.dir/src/editor/Editor.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/Editor.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\Editor.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Tpp
@@ -63,7 +69,7 @@ build CMakeFiles/Tpp.dir/src/main.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfa
 #############################################
 # Link the executable Tpp.exe
 
-build Tpp.exe: CXX_EXECUTABLE_LINKER__Tpp_Debug CMakeFiles/Tpp.dir/src/main.cpp.obj
+build Tpp.exe: CXX_EXECUTABLE_LINKER__Tpp_Debug CMakeFiles/Tpp.dir/src/main.cpp.obj CMakeFiles/Tpp.dir/src/editor/Editor.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Tpp.dir

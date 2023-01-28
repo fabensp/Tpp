@@ -1,7 +1,7 @@
 #pragma once
 
-#include "GapBuffer.h"
-#include "LinkedListBuffer.h"
+#include "buffers/GapBuffer.h"
+#include "buffers/LinkedListBuffer.h"
 
 namespace Tpp {
     class StructNode {

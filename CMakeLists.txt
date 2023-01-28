@@ -3,4 +3,4 @@ project(Tpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Tpp src/main.cpp)
+add_executable(Tpp src/main.cpp src/editor/Editor.cpp)

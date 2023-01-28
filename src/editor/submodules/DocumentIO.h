@@ -12,7 +12,7 @@ public: // methods
     void write_file (std::string& s);
     std::string& read_line();
     bool has_more_lines ();
-    bool file_exists ();
+    bool file_exists (const std::string& f);
     const std::string& file_name ();
     
     DocumentIO ();

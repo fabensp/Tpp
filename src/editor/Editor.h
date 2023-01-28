@@ -25,7 +25,7 @@ namespace Tpp {
         int cursor_index () { return doc->cursor_index(); } // index of cursor in line
         
         Editor (); // default constructor
-        Editor (int c, const char** v); // cmd args constructor
+        Editor (int c, char** v); // cmd args constructor
         explicit Editor (char t); // doctype constructor
         ~Editor (); // destructor
         void operator delete (void* e); // delete overload
