@@ -43,4 +43,8 @@ namespace Tpp {
     Editor::Editor (TppArgs args) : settings(std::move(args)) {
         doc = new Document(settings.type, settings.file);
     }
+
+    Editor::~Editor () {
+        delete doc;
+    }
 }

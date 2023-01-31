@@ -34,6 +34,5 @@ namespace Tpp {
         Editor (); // default constructor
         explicit Editor (TppArgs args); // cmd args constructor
         ~Editor (); // destructor
-        void operator delete (void* e); // delete overload
     };
 }
