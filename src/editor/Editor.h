@@ -9,11 +9,13 @@ namespace Tpp {
     public:
         Buffer::BufferType type;
         std::string file;
-        
+
+        void dbg ();
+
         TppArgs () : type(Buffer::LinkedList) {}
         TppArgs (int c, char** v);
     private:
-        std::string& str2filename (char* s); // parse a string and format it to be an acceptable file name and format
+        static bool check_filename (const char* s); // parse a string and format it to be an acceptable file name and format
     };
     
     class Editor { // highest layer of abstraction, holds document
@@ -30,6 +32,7 @@ namespace Tpp {
         int line_count () { return doc->line_count(); } // # lines in doc
         int cursor_line () { return doc->cursor_line(); } // line the cursor is on
         int cursor_index () { return doc->cursor_index(); } // index of cursor in line
+        void dbg ();
         
         Editor (); // default constructor
         explicit Editor (TppArgs args); // cmd args constructor
