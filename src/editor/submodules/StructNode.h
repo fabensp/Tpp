@@ -16,7 +16,8 @@ namespace Tpp {
         StructNode (Buffer* i, StructNode* n) : i(i), n(n) {}
         
         ~StructNode () {
-            delete i, n, this;
+            delete i;
+            delete n;
         }
     };
 }

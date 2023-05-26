@@ -52,14 +52,65 @@ build cmake_object_order_depends_target_Tpp: phony || CMakeFiles/Tpp.dir
 build CMakeFiles/Tpp.dir/src/main.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/main.cpp || cmake_object_order_depends_target_Tpp
   DEP_FILE = CMakeFiles\Tpp.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
   OBJECT_DIR = CMakeFiles\Tpp.dir
   OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src
 
 build CMakeFiles/Tpp.dir/src/editor/Editor.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/Editor.cpp || cmake_object_order_depends_target_Tpp
   DEP_FILE = CMakeFiles\Tpp.dir\src\editor\Editor.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
   OBJECT_DIR = CMakeFiles\Tpp.dir
   OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor
+
+build CMakeFiles/Tpp.dir/src/editor/Document.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/Document.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\Document.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor
+
+build CMakeFiles/Tpp.dir/src/editor/submodules/BufferStructure.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/submodules/BufferStructure.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\submodules\BufferStructure.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor\submodules
+
+build CMakeFiles/Tpp.dir/src/editor/submodules/DocumentIO.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/submodules/DocumentIO.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\submodules\DocumentIO.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor\submodules
+
+build CMakeFiles/Tpp.dir/src/editor/submodules/buffers/GapBuffer.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/submodules/buffers/GapBuffer.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\submodules\buffers\GapBuffer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor\submodules\buffers
+
+build CMakeFiles/Tpp.dir/src/editor/submodules/buffers/LinkedListBuffer.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/submodules/buffers/LinkedListBuffer.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\submodules\buffers\LinkedListBuffer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor\submodules\buffers
+
+build CMakeFiles/Tpp.dir/src/editor/submodules/buffers/Buffer.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/submodules/buffers/Buffer.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\submodules\buffers\Buffer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor\submodules\buffers
+
+build CMakeFiles/Tpp.dir/src/editor/submodules/buffers/CursorNode.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/Users/pfabe/Tpp/src/editor/submodules/buffers/CursorNode.cpp || cmake_object_order_depends_target_Tpp
+  DEP_FILE = CMakeFiles\Tpp.dir\src\editor\submodules\buffers\CursorNode.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/QT/Tools/mingw1120_64/opt/include/ncursesw -IC:/QT/Tools/mingw1120_64/opt/include
+  OBJECT_DIR = CMakeFiles\Tpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tpp.dir\src\editor\submodules\buffers
 
 
 # =============================================================================
@@ -69,9 +120,9 @@ build CMakeFiles/Tpp.dir/src/editor/Editor.cpp.obj: CXX_COMPILER__Tpp_Debug D$:/
 #############################################
 # Link the executable Tpp.exe
 
-build Tpp.exe: CXX_EXECUTABLE_LINKER__Tpp_Debug CMakeFiles/Tpp.dir/src/main.cpp.obj CMakeFiles/Tpp.dir/src/editor/Editor.cpp.obj
+build Tpp.exe: CXX_EXECUTABLE_LINKER__Tpp_Debug CMakeFiles/Tpp.dir/src/main.cpp.obj CMakeFiles/Tpp.dir/src/editor/Editor.cpp.obj CMakeFiles/Tpp.dir/src/editor/Document.cpp.obj CMakeFiles/Tpp.dir/src/editor/submodules/BufferStructure.cpp.obj CMakeFiles/Tpp.dir/src/editor/submodules/DocumentIO.cpp.obj CMakeFiles/Tpp.dir/src/editor/submodules/buffers/GapBuffer.cpp.obj CMakeFiles/Tpp.dir/src/editor/submodules/buffers/LinkedListBuffer.cpp.obj CMakeFiles/Tpp.dir/src/editor/submodules/buffers/Buffer.cpp.obj CMakeFiles/Tpp.dir/src/editor/submodules/buffers/CursorNode.cpp.obj | C$:/Qt/Tools/mingw1120_64/opt/lib/libncurses.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = C:/Qt/Tools/mingw1120_64/opt/lib/libncurses.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Tpp.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

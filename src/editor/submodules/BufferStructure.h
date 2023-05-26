@@ -1,6 +1,7 @@
 #pragma once
 
-#include "/buffers/Buffer.h"
+#include <string>
+#include "buffers/Buffer.h"
 #include "StructNode.h"
 
 namespace Tpp {
@@ -15,13 +16,13 @@ namespace Tpp {
         int line_count (); // # lines in doc
         int cursor_line (); // line the cursor is on
         int cursor_index (); // index of cursor in line
-        std::string& doc2str (); // text contents of doc
-        std::string& line2str (); // text contents of current line
-        std::string& line2str (int l); // text contents of line l
-        std::string& line_dbg (); // debug representation of the current line
-        void load_line_start (std::string& s);
-        void load_line_end (std::string& s);
-        void load_line_at (std::string& s, int l);
+        std::string doc2str (); // text contents of doc
+        std::string line2str (); // text contents of current line
+        std::string line2str (int l); // text contents of line l
+        std::string line_dbg (); // debug representation of the current line
+        void load_line_start (std::string s);
+        void load_line_end (std::string s);
+        void load_line_at (std::string s, int l);
         
         bool cur_left (); // cursor left 1 char
         bool cur_left (int c); // cursor left c chars
@@ -39,7 +40,7 @@ namespace Tpp {
         bool ins_la (); // insert line above
         bool ins_lb (); // insert line below
         bool ins_text (char c); // insert a character
-        bool ins_text (const std::string& s); // insert characters
+        bool ins_text (const std::string s); // insert characters
         bool rm_line (); // remove current line
         bool rm_left (); // remove char to left
         
