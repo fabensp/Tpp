@@ -8,7 +8,7 @@ namespace Tpp {
     class BufferStructure { // holds lines together
     private: // members
         StructNode* head;
-        int cursor;
+        StructNode* cursor;
         Buffer::BufferType type;
     public: // methods
         int line_length (); // length of current line
@@ -20,9 +20,9 @@ namespace Tpp {
         std::string line2str (); // text contents of current line
         std::string line2str (int l); // text contents of line l
         std::string line_dbg (); // debug representation of the current line
-        void load_line_start (std::string s);
-        void load_line_end (std::string s);
-        void load_line_at (std::string s, int l);
+        void load_line_start (const std::string& s);
+        void load_line_end (const std::string& s);
+        void load_line_at (const std::string& s, int l);
         
         bool cur_left (); // cursor left 1 char
         bool cur_left (int c); // cursor left c chars
@@ -40,7 +40,7 @@ namespace Tpp {
         bool ins_la (); // insert line above
         bool ins_lb (); // insert line below
         bool ins_text (char c); // insert a character
-        bool ins_text (const std::string s); // insert characters
+        bool ins_text (const std::string& s); // insert characters
         bool rm_line (); // remove current line
         bool rm_left (); // remove char to left
         
@@ -50,6 +50,5 @@ namespace Tpp {
     
     private: // methods
         StructNode* get_node (int i); // iterate through lines to get a specific index
-        Buffer* new_buffer (); // return a new buffer of the correct type
     };
 }

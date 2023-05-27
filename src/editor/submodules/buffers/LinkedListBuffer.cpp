@@ -3,10 +3,7 @@
 #define CURSOR 7
 
 namespace Tpp {
-    LinkedListBuffer::LinkedListBuffer () {
-        cursor = new CursorNode(CURSOR);
-        head = cursor;
-    }
+    LinkedListBuffer::LinkedListBuffer () : cursor(new CursorNode(CURSOR)), head(cursor) {}
     
     LinkedListBuffer::~LinkedListBuffer () {
         CharNode* temp = head;
@@ -39,14 +36,20 @@ namespace Tpp {
     int LinkedListBuffer::length () {
         int out = 0;
         CharNode* temp = head;
-        while ((temp = temp->next()) != nullptr) out++;
+        while (temp != nullptr) {
+            out++;
+            temp = temp->next();
+        }
         return out - 1; // subtract one for cursor
     }
     
     int LinkedListBuffer::cursor_index () {
         int out = 0;
         CharNode* temp = head;
-        while ((temp = temp->next()) != cursor) out++;
+        while (temp != cursor) {
+            out++;
+            temp = temp->next();
+        }
         return out;
     }
     

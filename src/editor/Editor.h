@@ -1,9 +1,8 @@
 #pragma once
 
 #include <string>
-#include "../unit.h"
 #include <ncurses.h>
-
+#include "../unit.h"
 #include "Document.h"
 
 namespace Tpp {

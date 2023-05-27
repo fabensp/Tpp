@@ -13,7 +13,7 @@ namespace Tpp {
         bool load_file (const std::string& f); // read file f in to the editor. returns success
         bool store_file (); // write contents of buf_st to last read file
         bool store_file (const std::string& f); // write contents of buf_st to file f. returns success
-        bool file_exists (const std::string& f) { return dio.file_exists(f); } // checks if file f exists in the fs
+        bool file_exists (const std::string& f) { return dio.file_exists(f); }
         std::string const& current_file_name () { return dio.file_name(); } // current file name
         std::string doc2str () { return buf_st->doc2str(); } // text contents of doc
         std::string line2str () { return buf_st->line2str(); } // text contents of current line
