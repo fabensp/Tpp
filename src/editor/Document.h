@@ -23,6 +23,7 @@ namespace Tpp {
         int line_count () { return buf_st->line_count(); } // # lines in doc
         int cursor_line () { return buf_st->cursor_line(); } // line the cursor is on
         int cursor_index () { return buf_st->cursor_index(); } // index of cursor in line
+        void dbg ();
         
         bool cursor_left () { return buf_st->cur_left(); } // cursor left 1 char
         bool cursor_left (int c) { return buf_st->cur_left(c); } // cursor left c chars
