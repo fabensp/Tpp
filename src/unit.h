@@ -9,8 +9,8 @@ static int T_CNT_FAIL = 0;
 static int T_CNT_TEST = 0;
 
 #define TEST(desc, name, body)                                                  \
-static void test_ ## name (){                                                          \
-std::cout << "Testing that " << desc << "... ";                                 \
+static void test_ ## name (){                                                   \
+std::cout << "Testing that " << desc << "...";                                  \
 A_LCL_FAIL = 0;                                                                 \
 body;                                                                           \
 if (A_LCL_FAIL) {                                                               \
@@ -22,17 +22,17 @@ T_CNT_TEST++;}                                                                  
 
 #define ASSERT(expr)                                                            \
 if (!(expr)) {                                                                  \
-std::cout << "Assertion failed: '" << #expr << "'"                              \
+std::cout << "\nAssertion failed: '" << #expr << "'"                            \
 <<  " in " << __FILE__ << ":" << __LINE__ << std::endl;                         \
 A_CNT_FAIL++; A_LCL_FAIL++;                                                     \
 } A_CNT_TEST++                                                                  \
 
 #define ASSERT_EQ(op1, op2)                                                     \
 if (!(op1 == op2)) {                                                            \
-std::cout << "Assertion failed in " << __FILE__ << ":" << __LINE__              \
+std::cout << "\nAssertion failed in " << __FILE__ << ":" << __LINE__              \
 << "\n    " << #op1 << " which is \"" << op1                                    \
 << "\" \n        compared with \n    "                                          \
-<< #op2 << " which is \"" << op2 << "\"\n" << std::endl;                        \
+<< #op2 << " which is \"" << op2 << "\"" << std::endl;                        \
 A_CNT_FAIL++; A_LCL_FAIL++;                                                     \
 } A_CNT_TEST++                                                                  \
 
@@ -46,4 +46,4 @@ std::cout << "\n---\n"                                                          
 std::cout << "\n---\n"                                                          \
 << "Total:  " << T_CNT_TEST << "\n"                                             \
 << "Passed: " << (T_CNT_TEST - T_CNT_FAIL) << "\n"                              \
-<< "Failed: " << T_CNT_FAIL << "\n"                                             \
+<< "Failed: " << T_CNT_FAIL << "\n"
