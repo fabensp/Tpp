@@ -2,6 +2,7 @@
 
 #include "submodules/BufferStructure.h"
 #include "submodules/DocumentIO.h"
+#include <iostream>
 
 namespace Tpp {
     class Document { // connects fs with working data
@@ -10,9 +11,9 @@ namespace Tpp {
         BufferStructure* buf_st; // text buffer structure
         DocumentIO dio;
     public: // methods
-        bool load_file (const std::string& f); // read file f in to the editor. returns success
+        void load_file (const std::string& f); // read file f in to the editor. returns success
         bool store_file (); // write contents of buf_st to last read file
-        bool store_file (const std::string& f); // write contents of buf_st to file f. returns success
+        bool store_file (const std::string& f) { return dio.write_file(f); } // write contents of buf_st to file f. returns success
         bool file_exists (const std::string& f) { return dio.file_exists(f); }
         std::string const& current_file_name () { return dio.file_name(); } // current file name
         std::string doc2str () { return buf_st->doc2str(); } // text contents of doc
@@ -45,9 +46,8 @@ namespace Tpp {
         bool rm_line () { return buf_st->rm_line(); } // remove current line
         bool rm_left () { return buf_st->rm_left(); } // remove char to left
         
-        Document (); // default constructor
-        explicit Document (Buffer::BufferType t); // doctype constructor
-        Document (Buffer::BufferType t, std::string const& f); // doctype + file constructor
+        explicit Document (Buffer::BufferType t = Buffer::Gap); // doctype constructor
+        explicit Document (std::string const& f, Buffer::BufferType t = Buffer::Gap); // doctype + file constructor
         ~Document ();
     };
 }

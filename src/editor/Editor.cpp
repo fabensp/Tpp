@@ -21,7 +21,7 @@ namespace Tpp {
     Editor::Editor () : Editor(TppArgs(1, (char**) "-l")){}
     
     Editor::Editor (TppArgs args) : settings(std::move(args)) {
-        doc = new Document(settings.type, settings.file);
+        doc = new Document(settings.file, settings.type);
         initscr();
         curs_set(0);
         cbreak();

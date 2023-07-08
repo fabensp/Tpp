@@ -4,6 +4,7 @@
 
 namespace Tpp {
     void DocumentIO::open_file (const std::string& f) {
+        close_file();
         is.open(f);
         filename = f;
     }
@@ -13,12 +14,14 @@ namespace Tpp {
         filename = "";
     }
     
-    void DocumentIO::write_file (const std::string& s) {
+    bool DocumentIO::write_file (const std::string& s) {
+        if (filename.empty()) return false;
         std::ofstream os;
         is.close();
         os.open(filename);
         os << s;
         os.close();
+        return true;
     }
     
     std::string DocumentIO::read_line() {

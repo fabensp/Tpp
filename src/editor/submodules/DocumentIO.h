@@ -11,7 +11,7 @@ namespace Tpp {
     public: // methods
         void open_file (const std::string& f);
         void close_file ();
-        void write_file (std::string const& s);
+        bool write_file (std::string const& s);
         std::string read_line ();
         bool has_more_lines ();
         static bool file_exists (const std::string& f);
@@ -20,7 +20,5 @@ namespace Tpp {
         DocumentIO ();
         explicit DocumentIO (const std::string& f);
         ~DocumentIO ();
-    private: // methods
-    
     };
 }
