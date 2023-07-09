@@ -60,22 +60,22 @@ TEST("buffer structure can traverse and edit lines", BufferStructure, {
     ASSERT(s.ins_lb());
     ASSERT(s.cur_down());
     ASSERT(s.ins_text("peas and carrots"));
-    ASSERT_EQ(s.doc2str(), "hello world\npeas and carrots\n");
+    ASSERT_EQ(s.doc2str(), "hello world\npeas and carrots");
     ASSERT(s.cur_left(7));
     ASSERT(s.ins_text("glazed "));
-    ASSERT_EQ(s.doc2str(), "hello world\npeas and glazed carrots\n");
+    ASSERT_EQ(s.doc2str(), "hello world\npeas and glazed carrots");
     ASSERT(s.cur_up());
     ASSERT(s.ins_text(" :D"));
-    ASSERT_EQ(s.doc2str(), "hello world :D\npeas and glazed carrots\n");
+    ASSERT_EQ(s.doc2str(), "hello world :D\npeas and glazed carrots");
     ASSERT_EQ(s.line_dbg(), "hello world :D____");
     ASSERT(s.cur_down());
     ASSERT_EQ(s.line_dbg(), "peas and glaze____d carrots");
     s.load_line_start("welcome");
-    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\npeas and glazed carrots\n");
+    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\npeas and glazed carrots");
     s.load_line_end("the end");
-    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\npeas and glazed carrots\nthe end\n");
+    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\npeas and glazed carrots\nthe end");
     s.load_line_at("intermission", 2);
-    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\nintermission\npeas and glazed carrots\nthe end\n");
+    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\nintermission\npeas and glazed carrots\nthe end");
     ASSERT_EQ(s.line_count(), 5);
 });
 

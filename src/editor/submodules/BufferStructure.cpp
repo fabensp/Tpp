@@ -35,10 +35,10 @@ namespace Tpp {
     
     std::string BufferStructure::doc2str () {
         StructNode* temp = head;
-        std::string out;
-        do {
-            out += temp->item()->line2str() + "\n";
-        } while ((temp = temp->next()) != nullptr);
+        std::string out = temp->item()->line2str();
+        while ((temp = temp->next()) != nullptr) {
+            out += "\n" + temp->item()->line2str();
+        }
         return out;
     }
     
@@ -188,6 +188,12 @@ namespace Tpp {
     
     bool BufferStructure::rm_left () {
         return cursor->item()->rm_left();
+    }
+    
+    bool BufferStructure::clear() {
+        delete head;
+        auto i = (type == Buffer::Gap) ? (Buffer*) new GapBuffer() : (Buffer*) new LinkedListBuffer();
+        head = cursor = new StructNode(i, nullptr, nullptr);
     }
     
     StructNode* BufferStructure::get_node (int i) {

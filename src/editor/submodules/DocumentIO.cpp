@@ -1,7 +1,7 @@
 #include "DocumentIO.h"
 
 namespace Tpp {
-    void DocumentIO::open_file (std::string f) {
+    void DocumentIO::open_file (const std::string& f) {
         if (f.empty()) return;
         close_file();
         if (file_exists(f)) is.open(f);

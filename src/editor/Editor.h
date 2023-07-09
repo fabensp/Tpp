@@ -20,10 +20,11 @@ namespace Tpp {
         Document* doc;
         TppArgs settings;
         int view_start;
-        int cmd;
+        int cmd_mode;
         Buffer* cmd_line;
     public: // methods
         bool run (); // run an application cycle. returns whether to keep running
+        int execute(const std::string& command); // execute application command
         std::string current_file_name () { return doc->current_file_name(); } // current file name
         std::string line2str () { return doc->line2str(); } // text contents of current line
         int line_length () { return doc->line_length(); } // length of current line
@@ -33,7 +34,7 @@ namespace Tpp {
         int cursor_index () { return doc->cursor_index(); } // index of cursor in line
         
         Editor (); // default constructor
-        explicit Editor (TppArgs args); // cmd args constructor
+        explicit Editor (TppArgs args); // cmd_mode args constructor
         ~Editor (); // destructor
     private: // methods
         void draw_screen();

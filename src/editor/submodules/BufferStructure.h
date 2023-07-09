@@ -44,6 +44,7 @@ namespace Tpp {
         bool ins_text (const std::string& s); // insert characters
         bool rm_line (); // remove current line
         bool rm_left (); // remove char to left
+        bool clear(); // clear structure contents
         
         BufferStructure ();
         BufferStructure (Buffer::BufferType t);
