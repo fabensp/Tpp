@@ -46,4 +46,4 @@ std::cout << "\n---\n"                                                          
 std::cout << "\n---\n"                                                          \
 << "Total:  " << T_CNT_TEST << "\n"                                             \
 << "Passed: " << (T_CNT_TEST - T_CNT_FAIL) << "\n"                              \
-<< "Failed: " << T_CNT_FAIL << "\n"                                             \
+<< "Failed: " << T_CNT_FAIL << "\n"

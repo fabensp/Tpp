@@ -13,7 +13,7 @@ namespace Tpp {
     
     int BufferStructure::line_count () {
         StructNode* temp = head;
-        int out = 0;
+        int out = 1;
         while ((temp = temp->next()) != nullptr) out++;
         return out;
     }
@@ -21,7 +21,11 @@ namespace Tpp {
     int BufferStructure::cursor_line () {
         StructNode* temp = head;
         int out = 0;
-        while ((temp = temp->next()) != cursor) out++;
+        while (temp != cursor) {
+            out++;
+            temp = temp->next();
+            if (!temp) return -1;
+        }
         return out;
     }
     
@@ -50,6 +54,10 @@ namespace Tpp {
     
     std::string BufferStructure::line_dbg () {
         return cursor->item()->line_dbg();
+    }
+    
+    std::string BufferStructure::line_dbg (int l) {
+        return get_node(l)->item()->line_dbg();
     }
     
     void BufferStructure::load_line_start (const std::string& s) {
@@ -199,10 +207,10 @@ namespace Tpp {
     }
     
     BufferStructure::~BufferStructure () {
-        StructNode* temp = head->next();
+        StructNode* temp = head;
         while (temp->next() != nullptr) {
-            delete temp->prev();
             temp = temp->next();
+            delete temp->prev();
         }
         delete temp;
     }

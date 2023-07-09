@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 #else
     auto args = Tpp::TppArgs(argc, argv);
     auto app = new Tpp::Editor(args);
-    app->run();
+    while(app->run());
     delete app;
 #endif
     return 0;

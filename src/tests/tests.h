@@ -1,3 +1,4 @@
+#include "../editor/Editor.h"
 #include "../unit.h"
 
 TEST("linked list buffer can move in line and edit contents", LinkedListBuffer, {
@@ -18,8 +19,12 @@ TEST("linked list buffer can move in line and edit contents", LinkedListBuffer, 
     ASSERT(b.ins_text('s'));
     ASSERT_EQ(b.line_dbg(), "s|hello wordl"); // insert start of line
     ASSERT_EQ(b.line2str(), "shello wordl"); // still prints correctly with cursor mid-line
-    ASSERT_EQ(b.cursor_index(), 1);
     ASSERT_EQ(b.length(), 12);
+    ASSERT_EQ(b.cursor_index(), 1);
+    ASSERT(b.rm_left());
+    ASSERT_EQ(b.line2str(), "hello wordl"); // remove first char correctly
+    ASSERT(!b.rm_left());
+    ASSERT_EQ(b.line2str(), "hello wordl"); // do nothing and return false when cursor at beginning of line
 });
 
 TEST("gap buffer can move in line and edit contents", GapBuffer, {
@@ -42,6 +47,10 @@ TEST("gap buffer can move in line and edit contents", GapBuffer, {
     ASSERT_EQ(b.line2str(), "shello wordl"); // still prints correctly with cursor mid-line
     ASSERT_EQ(b.cursor_index(), 1);
     ASSERT_EQ(b.length(), 12);
+    ASSERT(b.rm_left());
+    ASSERT_EQ(b.line2str(), "hello wordl"); // remove first char correctly
+    ASSERT(!b.rm_left());
+    ASSERT_EQ(b.line2str(), "hello wordl"); // do nothing and return false when cursor at beginning of line
 });
 
 TEST("buffer structure can traverse and edit lines", BufferStructure, {
@@ -67,6 +76,7 @@ TEST("buffer structure can traverse and edit lines", BufferStructure, {
     ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\npeas and glazed carrots\nthe end\n");
     s.load_line_at("intermission", 2);
     ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\nintermission\npeas and glazed carrots\nthe end\n");
+    ASSERT_EQ(s.line_count(), 5);
 });
 
 TEST("document io can read and write", DocumentIO, {

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "CursorNode.h"
 
 namespace Tpp {
@@ -26,8 +27,8 @@ namespace Tpp {
     bool CursorNode::rm_left () {
         if (!p) return false;
         CharNode* temp = p;
+        if (p->prev()) p->prev()->s_next(this);
         p = p->prev();
-        p->s_next(this);
         delete temp;
         return true;
     }

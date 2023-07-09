@@ -2,6 +2,8 @@
 
 #include <fstream>
 #include <filesystem>
+#include <iostream>
+#include <string>
 
 namespace Tpp {
     class DocumentIO {
@@ -9,7 +11,7 @@ namespace Tpp {
         std::string filename;
         std::ifstream is;
     public: // methods
-        void open_file (const std::string& f);
+        void open_file (std::string f);
         void close_file ();
         bool write_file (std::string const& s);
         std::string read_line ();

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "LinkedListBuffer.h"
 
 #define CURSOR 7
@@ -75,6 +76,7 @@ namespace Tpp {
     }
     
     bool LinkedListBuffer::rm_left () {
+        if (cursor->prev() == head) head = cursor;
         return cursor->rm_left();
     }
 }

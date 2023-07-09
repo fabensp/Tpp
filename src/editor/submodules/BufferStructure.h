@@ -20,6 +20,7 @@ namespace Tpp {
         std::string line2str (); // text contents of current line
         std::string line2str (int l); // text contents of line l
         std::string line_dbg (); // debug representation of the current line
+        std::string line_dbg (int l); // debug representation of given line
         void load_line_start (const std::string& s);
         void load_line_end (const std::string& s);
         void load_line_at (const std::string& s, int l);

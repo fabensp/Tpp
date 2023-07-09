@@ -1,11 +1,10 @@
 #include "DocumentIO.h"
 
-#include <iostream>
-
 namespace Tpp {
-    void DocumentIO::open_file (const std::string& f) {
+    void DocumentIO::open_file (std::string f) {
+        if (f.empty()) return;
         close_file();
-        is.open(f);
+        if (file_exists(f)) is.open(f);
         filename = f;
     }
     
@@ -32,7 +31,7 @@ namespace Tpp {
     }
     
     bool DocumentIO::has_more_lines () {
-        return !is.eof();
+        return is.good();
     }
     
     bool DocumentIO::file_exists (const std::string& f) {
@@ -46,7 +45,7 @@ namespace Tpp {
     DocumentIO::DocumentIO () = default;
     
     DocumentIO::DocumentIO (const std::string& f) {
-        open_file(f);
+        open_file("./testing.txt");
     }
     
     DocumentIO::~DocumentIO () = default;

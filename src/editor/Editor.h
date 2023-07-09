@@ -1,8 +1,7 @@
 #pragma once
 
 #include <string>
-#include <utility>
-#include "Screen.h"
+#include <ncurses.h>
 #include "Document.h"
 
 namespace Tpp {
@@ -10,18 +9,21 @@ namespace Tpp {
     public:
         Buffer::BufferType type;
         std::string file;
+        int dbg;
         
         TppArgs () : type(Buffer::LinkedList) {}
         TppArgs (int c, char** v);
     };
     
-    class Editor : public Screen { // highest layer of abstraction, holds document
+    class Editor { // highest layer of abstraction, holds document
     private: // members
         Document* doc;
         TppArgs settings;
+        int view_start;
+        int cmd;
+        Buffer* cmd_line;
     public: // methods
-        void run () override; // run an application cycle. returns whether to keep running
-        bool execute (std::string& input); // execute a command. returns success
+        bool run (); // run an application cycle. returns whether to keep running
         std::string current_file_name () { return doc->current_file_name(); } // current file name
         std::string line2str () { return doc->line2str(); } // text contents of current line
         int line_length () { return doc->line_length(); } // length of current line

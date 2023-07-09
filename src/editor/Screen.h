@@ -3,21 +3,17 @@
 
 #include <ncurses.h>
 
-class Screen
-{
+class Screen {
 public:
-    Screen();
-    Screen(int cursor, int echo);
-    virtual ~Screen();
-    
-    virtual void run(); // virtual function
-    int get_input() { return getch(); }
-    void echo_set(int e);
-    void cursor_set(int c);
-    void refresh_screen();
-    void clear_screen();
-    void close_window();
-    void print(int row, int col, const char str[]);
+    static void start(int, int);
+    static void run(); // virtual function
+    static int get_input() { return getch(); }
+    static void echo_set(int e);
+    static void cursor_set(int c);
+    static void refresh_screen();
+    static void clear_screen();
+    static void close_window();
+    static void print(int row, int col, const char str[]);
     
 };
 
