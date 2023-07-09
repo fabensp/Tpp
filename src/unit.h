@@ -29,10 +29,10 @@ A_CNT_FAIL++; A_LCL_FAIL++;                                                     
 
 #define ASSERT_EQ(op1, op2)                                                     \
 if (!(op1 == op2)) {                                                            \
-std::cout << "\nAssertion failed in " << __FILE__ << ":" << __LINE__              \
+std::cout << "\nAssertion failed in " << __FILE__ << ":" << __LINE__            \
 << "\n    " << #op1 << " which is \"" << op1                                    \
 << "\" \n        compared with \n    "                                          \
-<< #op2 << " which is \"" << op2 << "\"" << std::endl;                        \
+<< #op2 << " which is \"" << op2 << "\"" << std::endl;                          \
 A_CNT_FAIL++; A_LCL_FAIL++;                                                     \
 } A_CNT_TEST++                                                                  \
 
@@ -46,4 +46,4 @@ std::cout << "\n---\n"                                                          
 std::cout << "\n---\n"                                                          \
 << "Total:  " << T_CNT_TEST << "\n"                                             \
 << "Passed: " << (T_CNT_TEST - T_CNT_FAIL) << "\n"                              \
-<< "Failed: " << T_CNT_FAIL << "\n"
+<< "Failed: " << T_CNT_FAIL << "\n"                                             \

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include <ncurses.h>
-#include "../unit.h"
+#include <utility>
+#include "Screen.h"
 #include "Document.h"
 
 namespace Tpp {
@@ -15,12 +15,12 @@ namespace Tpp {
         TppArgs (int c, char** v);
     };
     
-    class Editor { // highest layer of abstraction, holds document
+    class Editor : public Screen { // highest layer of abstraction, holds document
     private: // members
         Document* doc;
         TppArgs settings;
     public: // methods
-        bool run (); // run an application cycle. returns whether to keep running
+        void run () override; // run an application cycle. returns whether to keep running
         bool execute (std::string& input); // execute a command. returns success
         std::string current_file_name () { return doc->current_file_name(); } // current file name
         std::string line2str () { return doc->line2str(); } // text contents of current line
@@ -33,5 +33,7 @@ namespace Tpp {
         Editor (); // default constructor
         explicit Editor (TppArgs args); // cmd args constructor
         ~Editor (); // destructor
+    private: // methods
+        void draw_screen();
     };
 }

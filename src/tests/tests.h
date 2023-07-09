@@ -17,7 +17,7 @@ TEST("linked list buffer can move in line and edit contents", LinkedListBuffer, 
     ASSERT_EQ(b.line_dbg(), "|hello wordl"); // start of line
     ASSERT(b.ins_text('s'));
     ASSERT_EQ(b.line_dbg(), "s|hello wordl"); // insert start of line
-    ASSERT_EQ(b.line2str(), "shellod wordl"); // still prints correctly with cursor mid-line
+    ASSERT_EQ(b.line2str(), "shello wordl"); // still prints correctly with cursor mid-line
     ASSERT_EQ(b.cursor_index(), 1);
     ASSERT_EQ(b.length(), 12);
 });
