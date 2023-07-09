@@ -77,6 +77,10 @@ TEST("buffer structure can traverse and edit lines", BufferStructure, {
     s.load_line_at("intermission", 2);
     ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\nintermission\npeas and glazed carrots\nthe end");
     ASSERT_EQ(s.line_count(), 5);
+    s.rm_line();
+    ASSERT_EQ(s.doc2str(), "welcome\nhello world :D\npeas and glazed carrots\nthe end");
+    ASSERT_EQ(s.line_count(), 4);
+    ASSERT_EQ(s.cursor_line(), 1);
 });
 
 TEST("document io can read and write", DocumentIO, {
