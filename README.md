@@ -1,5 +1,5 @@
 # Tpp
-###C++ remake of CS150 Java text editor.
+##C++ remake of CS150 Java text editor.
 
 ## To Build
 Build with CMake v3.5+, to run unit tests build with -DTESTS=1 in the CMake build params
