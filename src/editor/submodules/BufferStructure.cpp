@@ -194,6 +194,7 @@ namespace Tpp {
         delete head;
         auto i = (type == Buffer::Gap) ? (Buffer*) new GapBuffer() : (Buffer*) new LinkedListBuffer();
         head = cursor = new StructNode(i, nullptr, nullptr);
+        return true;
     }
     
     StructNode* BufferStructure::get_node (int i) {
